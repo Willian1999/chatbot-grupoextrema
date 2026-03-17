@@ -1,0 +1,257 @@
+/* ============================================
+   style.css — Visual do Simulador Grupo Extrema
+   ============================================ */
+
+/* Reset geral */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Página */
+body {
+  background: #f0f2f5;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  min-height: 100vh;
+}
+
+/* Título da página */
+.page-title {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Telefone */
+.wa-phone {
+  width: 360px;
+  background: #e5ddd5;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Cabeçalho verde */
+.wa-header {
+  background: #075e54;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wa-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.wa-header-name {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wa-header-status {
+  color: #b2dfdb;
+  font-size: 11px;
+}
+
+/* Área de mensagens */
+.wa-messages {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #e5ddd5;
+  min-height: 100px;
+}
+
+/* Balões de mensagem */
+.msg {
+  max-width: 85%;
+  padding: 7px 10px 4px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.msg-bot {
+  background: #fff;
+  align-self: flex-start;
+  border-top-left-radius: 2px;
+  color: #111;
+}
+
+.msg-user {
+  background: #dcf8c6;
+  align-self: flex-end;
+  border-top-right-radius: 2px;
+  color: #111;
+}
+
+.msg-time {
+  font-size: 10px;
+  color: #999;
+  text-align: right;
+  margin-top: 3px;
+}
+
+/* Mensagem com opções de menu */
+.msg-options {
+  background: #fff;
+  align-self: flex-start;
+  border-radius: 8px;
+  border-top-left-radius: 2px;
+  overflow: hidden;
+  max-width: 95%;
+  border: 0.5px solid #e0e0e0;
+}
+
+.msg-options-text {
+  padding: 7px 10px 4px;
+  font-size: 13px;
+  color: #111;
+  line-height: 1.55;
+}
+
+/* Botões de opção */
+.opt-btn {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-top: 0.5px solid #e0e0e0;
+  background: #fff;
+  font-size: 13px;
+  color: #075e54;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 500;
+  transition: background 0.12s;
+}
+
+.opt-btn:hover { background: #f5f5f5; }
+.opt-btn:active { background: #e8f5e9; }
+
+/* Label de categoria (não clicável) */
+.opt-disabled {
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #888;
+  border-top: 0.5px solid #eee;
+  background: #fafafa;
+  letter-spacing: 0.3px;
+}
+
+/* Área de input */
+.wa-input-area {
+  background: #f0f0f0;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 0.5px solid #ddd;
+}
+
+.wa-input {
+  flex: 1;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 14px;
+  font-size: 13px;
+  background: #fff;
+  outline: none;
+  color: #111;
+}
+
+.wa-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #075e54;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-send:hover { background: #064e45; }
+
+/* Pontinhos "digitando" */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: #fff;
+  border-radius: 8px;
+  border-top-left-radius: 2px;
+  align-self: flex-start;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #aaa;
+  animation: bn 1.2s infinite;
+}
+
+.dot:nth-child(2) { animation-delay: .2s; }
+.dot:nth-child(3) { animation-delay: .4s; }
+
+@keyframes bn {
+  0%, 60%, 100% { transform: translateY(0); }
+  30%            { transform: translateY(-5px); }
+}
+
+/* Mensagem de sucesso/encerramento */
+.msg-ok {
+  background: #d4edda;
+  border: 0.5px solid #b8dacc;
+  align-self: flex-start;
+  border-radius: 8px;
+  border-top-left-radius: 2px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #155724;
+  max-width: 95%;
+  word-break: break-word;
+}
+
+/* Botão reiniciar */
+.reset-btn {
+  margin-top: 16px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+
+.reset-btn:hover { background: #f5f5f5; }
